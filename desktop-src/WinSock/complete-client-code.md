@@ -79,6 +79,7 @@ int __cdecl main(int argc, char **argv)
         if (ConnectSocket == INVALID_SOCKET) {
             printf("socket failed with error: %ld\n", WSAGetLastError());
             WSACleanup();
+            freeaddrinfo(result);
             return 1;
         }
 
